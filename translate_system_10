@@ -1,0 +1,42 @@
+print('Введите систему исчисления:')
+sys = int(input())
+print('Введите число в вашей системе исчесления:')
+strk = str(input())
+ 
+def per_2(strk):
+    inx = len(strk)-1
+    ves = 1
+
+    chis = 0
+    while inx >= 0:
+        cif = int(strk[inx])
+
+        chis += cif*ves
+
+        ves *= 2
+        inx -= 1
+    print(chis)
+
+def per_16(strk):
+    inx = len(strk)-1
+    ves = 1
+    slo = {"A":10,"B":11,"C":12,"D":13,"E":14,"F":15}
+    chis = 0
+     
+    while inx >= 0:
+        cif = strk[inx]
+        if cif in slo:
+            cif = slo[cif]
+        else:
+            cif = int(strk[inx])
+        chis += cif*ves
+
+        ves *= 16
+        inx -= 1
+    print(chis)
+
+if sys == 2:
+    per_2(strk)
+if sys == 16:
+    per_16(strk)
+
