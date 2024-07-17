@@ -1,0 +1,24 @@
+print('Введите систему исчисления в которую вы хотите перевести:')
+sys = int(input())
+print('Введите число в 10 системе:')
+inti = int(input())
+
+def per_10_1(sys, inti):
+    intis = ''
+    while inti > 0:
+        cif = inti%sys
+        intis = str(cif) + intis
+        inti = inti//sys
+    print(intis)
+
+def per_10_16(sys,inti):
+    intis = ''
+    cif = '0123456789ABCDEF'
+    while inti > 0:
+        intis = cif[inti % sys] + intis
+        inti = inti // sys
+    print(intis)
+if sys < 11:
+    per_10_1(sys,inti)
+else:
+    per_10_16(sys,inti)
